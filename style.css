@@ -1,0 +1,232 @@
+/* ==================================
+   PENGATURAN DASAR (BODY & HEADER)
+   ================================== */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    color: white; /* Mengubah teks dasar menjadi putih agar terbaca di background gelap */
+    
+    /* Membuat campuran warna teknologi (gelap elegan) */
+    background: linear-gradient(-45deg, #004a6a, #00026e, #001e6a, #003c78);
+    /* Memperbesar ukuran background agar bisa digeser */
+    background-size: 400% 400%;
+    /* Menjalankan animasi bernama 'gradientGerak' selama 15 detik, terus-menerus */
+    animation: gradientGerak 15s ease infinite;
+} 
+/* Kunci Animasi (Keyframes) untuk menggeser warna background */
+@keyframes gradientGerak {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+header {
+    /* Menghapus warna header lama agar menyatu dengan animasi background body */
+    background: transparent; 
+    color: white;
+    padding: 3rem 0;
+    text-align: center;
+}
+
+#searchBar {
+    padding: 12px;
+    width: 60%;
+    max-width: 400px;
+    border-radius: 25px;
+    border: none;
+    margin-top: 15px;
+    font-size: 16px;
+    outline: none;
+    text-align: center;
+}
+
+/* ==================================
+   DESAIN TOMBOL FILTER
+   ================================== */
+.filter-box {
+    margin-top: 20px;
+}
+
+.btn-filter {
+    padding: 10px 20px;
+    margin: 5px;
+    border: 2px solid white;
+    background: transparent;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s, color 0.3s;
+}
+
+.btn-filter:hover { background: rgba(255, 255, 255, 0.2); }
+.btn-filter.aktif { background: white; color: #2a5298; }
+
+/* ==================================
+   DESAIN KARTU KOMPONEN (GRID)
+   ================================== */
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px;
+    flex-wrap: wrap; /* Penting agar kartu turun ke bawah jika layar sempit */
+}
+
+.card {
+    background: white;
+    color: #333; /* INI KODE BARUNYA: Mengembalikan warna teks di dalam kartu menjadi gelap */
+    border-radius: 12px;
+    padding: 20px;
+    width: 220px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-bottom: 4px solid transparent;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    border-bottom: 4px solid #2a5298;
+}
+
+.card-img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/* ==================================
+   DESAIN MODAL (POP-UP DETAIL)
+   ================================== */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    /* Menggelapkan sedikit layar di belakang pop-up */
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.modal-content {
+    /* 1. Efek Glassmorphism (Kaca Buram) */
+    background: rgba(255, 255, 255, 0.65); /* Warna putih dengan transparansi 65% */
+    backdrop-filter: blur(12px); /* Efek buram pada kaca sebesar 12 pixel */
+    -webkit-backdrop-filter: blur(12px); /* Dukungan khusus untuk browser Safari/Apple */
+    border: 1px solid rgba(255, 255, 255, 0.8); /* Garis tepi tipis warna putih terang */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Bayangan lembut di bawah kaca */
+    
+    /* 2. Pengaturan Tata Letak (Tetap sama seperti sebelumnya) */
+    margin: 5% auto;
+    padding: 30px;
+    border-radius: 15px; /* Ujung kaca sedikit lebih membulat */
+    width: 80%;
+    max-width: 450px;
+    text-align: center;
+    position: relative;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    max-height: 200px;
+    object-fit: cover;
+}
+
+.modal-types-box {
+    background: rgba(255, 255, 255, 0.5); /* Kotak info juga dibuat agak transparan */
+    padding: 12px;
+    border-radius: 5px;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #2a5298;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #aaa;
+}
+
+.close:hover { color: #333; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* ==================================
+   MEDIA QUERY (DESAIN RESPONSIF UNTUK HP)
+   ================================== */
+@media screen and (max-width: 600px) {
+    /* Jika lebar layar kurang dari 600px (HP), jalankan kode ini: */
+    
+    .container {
+        padding: 20px; /* Kurangi jarak kosong di pinggir layar */
+    }
+
+    .card {
+        width: 100%; /* Kartu menjadi penuh seukuran layar HP */
+    }
+
+    #searchBar {
+        width: 85%; /* Kolom pencarian sedikit lebih panjang */
+    }
+}
+/* ==================================
+   ANIMASI KANVAS PARTIKEL JARINGAN
+   ================================== */
+#canvas-jaringan {
+    position: fixed; /* Menempel di layar */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Berada paling belakang (di belakang kartu dan pop-up) */
+    pointer-events: none; /* Mencegah kanvas memblokir klik mouse ke tombol */
+}
+/* ==================================
+   KOMPONEN UI: FOOTER & SCROLL TOP
+   ================================== */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.4); /* Warna hitam transparan agar membaur dengan background */
+    color: #ddd; /* Warna teks abu-abu terang */
+    margin-top: 40px; /* Jarak antara kartu terbawah dengan footer */
+    font-size: 14px;
+}
+
+#btnScrollTop {
+    display: none; /* Disembunyikan secara default, JS yang akan memunculkannya nanti */
+    position: fixed; /* Membuat tombol melayang menetap di layar */
+    bottom: 30px;    /* Jarak dari bawah layar */
+    right: 30px;     /* Jarak dari kanan layar */
+    z-index: 99;     /* Memastikan tombol berada di atas elemen lain */
+    border: none;
+    background-color: #3498db;
+    color: white;
+    cursor: pointer;
+    padding: 15px 20px;
+    border-radius: 50%; /* Membuat desain tombol menjadi bulat */
+    font-size: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* Bayangan tombol */
+    transition: background-color 0.3s, transform 0.3s; /* Animasi transisi mulus */
+}
+
+/* Efek saat kursor diarahkan ke tombol */
+#btnScrollTop:hover {
+    background-color: #2980b9;
+    transform: translateY(-5px); /* Tombol sedikit terangkat */
+}
