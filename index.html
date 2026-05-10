@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Kanvas untuk Animasi Jaringan (Letakkan di urutan paling atas di dalam body) -->
+    <!-- Kanvas untuk Animasi Jaringan -->
     <canvas id="canvas-jaringan"></canvas>
 
     <!-- ============================== -->
@@ -33,127 +33,115 @@
     <!-- ============================== -->
     <main class="container" id="hardware-list">
         
-        <!-- KATEGORI: HARDWARE PC -->
-        <div class="card pc" data-kategori="pc" onclick="showDetail('CPU (Processor)', 'Otak utama sistem yang mengeksekusi instruksi program dan melakukan operasi aritmatika serta logika dasar.', 'https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=400', 'Intel & AMD')">
-            <img src="https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=400" alt="CPU" class="card-img">
+        <!-- =============================== -->
+        <!-- KATEGORI A: HARDWARE PC         -->
+        <!-- =============================== -->
+        <div class="card pc" data-kategori="pc" onclick="showDetail('CPU (Processor)', 'Otak utama komputer yang menjalankan instruksi dan proses perhitungan.', 'gambar/cpu.jpg', 'Merek: Intel / AMD')">
+            <img src="gambar/cpu.jpg" alt="CPU" class="card-img">
             <h3>CPU (Processor)</h3>
             <p>Klik untuk detail</p>
         </div>
 
-        <div class="card pc" data-kategori="pc" onclick="showDetail('RAM', 'Memori yang menyimpan data sementara agar CPU dapat memproses informasi dengan kecepatan tinggi.', 'https://images.unsplash.com/photo-1562976540-1502c2145186?w=400', 'DDR4 & DDR5')">
-            <img src="https://images.unsplash.com/photo-1562976540-1502c2145186?w=400" alt="RAM" class="card-img">
+        <div class="card pc" data-kategori="pc" onclick="showDetail('RAM', 'Memori sementara untuk menyimpan data yang sedang diproses agar akses lebih cepat.', 'gambar/ram.jpg', 'Merek: Corsair, Kingston')">
+            <img src="gambar/ram.jpg" alt="RAM" class="card-img">
             <h3>RAM</h3>
             <p>Klik untuk detail</p>
         </div>
       
-        <div class="card pc" data-kategori="pc" onclick="showDetail('Motherboard', 'Papan sirkuit utama (Mainboard) tempat semua komponen saling terhubung dan berkomunikasi satu sama lain.', 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=400', 'Merek: ASUS, MSI, Gigabyte, ASRock')">
-            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=400" alt="Motherboard" class="card-img">
+        <div class="card pc" data-kategori="pc" onclick="showDetail('Hard Disk / SSD', 'Media penyimpanan data permanen (file, OS, aplikasi). SSD lebih cepat dari HDD.', 'gambar/ssd.jpg', 'Merek: Seagate, Samsung')">
+            <img src="gambar/ssd.jpg" alt="SSD" class="card-img">
+            <h3>Hard Disk / SSD</h3>
+            <p>Klik untuk detail</p>
+        </div>
+
+        <div class="card pc" data-kategori="pc" onclick="showDetail('Motherboard', 'Papan utama yang menghubungkan semua komponen komputer.', 'gambar/motherboard.jpg', 'Merek: ASUS, Gigabyte')">
+            <img src="gambar/motherboard.jpg" alt="Motherboard" class="card-img">
             <h3>Motherboard</h3>
             <p>Klik untuk detail</p>
         </div>
 
-        <div class="card pc" data-kategori="pc" onclick="showDetail('GPU (VGA Card)', 'Graphics Processing Unit. Bertugas merender gambar, video, dan animasi 2D/3D ke layarmu dengan sangat cepat.', 'https://images.unsplash.com/photo-1590289456382-779836376824?w=400', 'Chipset: NVIDIA GeForce & AMD Radeon')">
-            <img src="https://images.unsplash.com/photo-1590289456382-779836376824?w=400" alt="GPU" class="card-img">
-            <h3>GPU (VGA Card)</h3>
+        <div class="card pc" data-kategori="pc" onclick="showDetail('Power Supply (PSU)', 'Menyuplai listrik ke seluruh komponen komputer.', 'gambar/psu.jpg', 'Merek: Cooler Master, EVGA')">
+            <img src="gambar/psu.jpg" alt="PSU" class="card-img"
+            <h3>Power Supply (PSU)</h3>
             <p>Klik untuk detail</p>
         </div>
 
-        <div class="card pc" data-kategori="pc" onclick="showDetail('Power Supply (PSU)', 'Mengubah arus listrik AC dari stopkontak menjadi arus DC yang stabil untuk didistribusikan ke seluruh komponen PC.', 'https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=400', 'Sertifikasi: 80+ Bronze, Gold, Platinum')">
-            <img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=400" alt="PSU" class="card-img">
-            <h3>Power Supply</h3>
+        <div class="card pc" data-kategori="pc" onclick="showDetail('VGA / GPU', 'Mengolah tampilan grafis untuk monitor (game, desain, dll).', 'gambar/vga.jpg', 'Merek: NVIDIA, AMD')">
+            <img src="gambar/vga.jpg" alt="VGA" class="card-img">
+            <h3>VGA / GPU</h3>
             <p>Klik untuk detail</p>
         </div>
 
-        <div class="card pc" data-kategori="pc" onclick="showDetail('Casing PC', 'Rumah fisik pelindung komponen. Berfungsi mengatur aliran udara (airflow) agar komponen di dalamnya tetap dingin.', 'https://images.unsplash.com/photo-1587831990711-23ca6441447b?w=400', 'Ukuran: ATX, Micro-ATX, Mini-ITX')">
-            <img src="https://images.unsplash.com/photo-1587831990711-23ca6441447b?w=400" alt="Casing" class="card-img">
-            <h3>Casing PC</h3>
-            <p>Klik untuk detail</p>
-        </div> 
-
-        <!-- KATEGORI: JARINGAN (Dengan Materi Teknis yang Diperdalam) -->
-        <div class="card jaringan" data-kategori="jaringan" onclick="showDetail('Core Switch', 'Pusat distribusi jaringan yang beroperasi di Layer 3. Mampu melakukan inter-VLAN routing dan manajemen bandwidth untuk menjaga stabilitas lalu lintas data.', 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400', 'Ruijie, Cisco, MikroTik')">
-            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400" alt="Core Switch" class="card-img">
-            <h3>Core Switch</h3>
+        <div class="card pc" data-kategori="pc" onclick="showDetail('Casing', 'Tempat semua komponen komputer dirakit.', 'gambar/casing.jpg', 'Merek: NZXT, Corsair')">
+            <img src="gambar/casing.jpg" alt="Casing" class="card-img">
+            <h3>Casing</h3>
             <p>Klik untuk detail</p>
         </div>
 
-        <div class="card jaringan" data-kategori="jaringan" onclick="showDetail('Access Point (AP)', 'Perangkat yang memancarkan SSID untuk koneksi nirkabel lokal. Mengubah data dari kabel Ethernet menjadi sinyal frekuensi radio (2.4GHz / 5GHz).', 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=400', 'Ruijie, Ubiquiti, TP-Link')">
-            <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=400" alt="Access Point" class="card-img">
-            <h3>Access Point</h3>
+        <div class="card pc" data-kategori="pc" onclick="showDetail('Cooling', 'Mendinginkan komponen agar tidak overheat.', 'gambar/cooling.jpg', 'Merek: Noctua, Deepcool')">
+            <img src="gambar/cooling.jpg" alt="Cooling" class="card-img">
+            <h3>Cooling</h3>
             <p>Klik untuk detail</p>
         </div>
-    
-        <div class="card pc" data-kategori="pc" onclick="showDetail('Monitor', 'Layar keluaran (output) utama untuk menampilkan antarmuka grafis (GUI) dari sistem operasi dan aplikasi komputer.', 'https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=400', 'Resolusi: 1080p, 1440p, 4K')">
-            <img src="https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=400" alt="Monitor" class="card-img">
+
+        <div class="card pc" data-kategori="pc" onclick="showDetail('Monitor', 'Menampilkan output visual dari komputer.', 'gambar/monitor.jpg', 'Merek: LG, Acer')">
+            <img src="gambar/monitor.jpg" alt="Monitor" class="card-img">
             <h3>Monitor</h3>
             <p>Klik untuk detail</p>
         </div>
 
-        <div class="card pc" data-kategori="pc" onclick="showDetail('Keyboard & Mouse', 'Perangkat input utama. Keyboard untuk mengetik perintah kode, mouse untuk mengarahkan kursor dan berinteraksi dengan UI.', 'https://images.unsplash.com/photo-1595225476474-87563907a212?w=400', 'Tipe: Membran, Mekanikal, Optikal')">
-            <img src="https://images.unsplash.com/photo-1595225476474-87563907a212?w=400" alt="Keyboard Mouse" class="card-img">
+        <div class="card pc" data-kategori="pc" onclick="showDetail('Keyboard & Mouse', 'Alat input untuk memasukkan data dan mengontrol komputer.', 'gambar/keyboard-mouse.jpg', 'Merek: Logitech, Razer')">
+            <img src="gambar/keyboard-mouse.jpg" alt="Keyboard Mouse" class="card-img">
             <h3>Keyboard & Mouse</h3>
             <p>Klik untuk detail</p>
         </div>
 
-        <div class="card pc" data-kategori="pc" onclick="showDetail('UPS (Baterai Cadangan)', 'Uninterruptible Power Supply. Baterai cadangan yang memberikan waktu untuk mematikan komputer dengan aman saat listrik PLN mati tiba-tiba.', 'https://images.unsplash.com/photo-1616422285623-149eb5be8eb2?w=400', 'Kapasitas: 600VA, 1200VA, 2000VA')">
-            <img src="https://images.unsplash.com/photo-1616422285623-149eb5be8eb2?w=400" alt="UPS" class="card-img">
-            <h3>UPS (Baterai)</h3>
+
+        <!-- =============================== -->
+        <!-- KATEGORI B: HARDWARE JARINGAN   -->
+        <!-- =============================== -->
+        <div class="card jaringan" data-kategori="jaringan" onclick="showDetail('Router', 'Mengatur dan membagi koneksi internet ke beberapa perangkat.', 'gambar/router.jpg', 'Merek: TP-Link, MikroTik')">
+            <img src="gambar/router.jpg" alt="Router" class="card-img">
+            <h3>Router</h3>
             <p>Klik untuk detail</p>
         </div>
 
-        <div class="card pc" data-kategori="pc" onclick="showDetail('Sound Card', 'Komponen pengolah sinyal audio. Mengubah data digital menjadi suara analog yang bisa didengar melalui speaker atau headphone.', 'https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?w=400', 'Tipe: On-board (Bawaan), Dedicated PCIe')">
-            <img src="https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?w=400" alt="Sound Card" class="card-img">
-            <h3>Sound Card</h3>
-            <p>Klik untuk detail</p> 
-        </div> 
+        <div class="card jaringan" data-kategori="jaringan" onclick="showDetail('Switch', 'Menghubungkan banyak perangkat dalam satu jaringan lokal (LAN).', 'gambar/switch.jpg', 'Merek: Cisco, D-Link')">
+            <img src="gambar/switch.jpg" alt="Switch" class="card-img">
+            <h3>Switch</h3>
+            <p>Klik untuk detail</p>
+        </div>
 
-        <div class="card jaringan" data-kategori="jaringan" onclick="showDetail('Modem', 'Modulator Demodulator. Perangkat yang mengubah sinyal analog dari tiang internet (ISP) menjadi sinyal digital untuk kodemu.', 'https://images.unsplash.com/photo-1551703599-6b3e8379aa8b?w=400', 'Teknologi: Fiber Optic (ONT), ADSL')">
-            <img src="https://images.unsplash.com/photo-1551703599-6b3e8379aa8b?w=400" alt="Modem" class="card-img">
+        <div class="card jaringan" data-kategori="jaringan" onclick="showDetail('Modem', 'Mengubah sinyal dari ISP menjadi koneksi internet yang bisa digunakan.', 'gambar/modem.jpg', 'Merek: Huawei, ZTE')">
+            <img src="gambar/modem.jpg" alt="Modem" class="card-img">
             <h3>Modem</h3>
             <p>Klik untuk detail</p>
         </div>
 
-        <div class="card jaringan" data-kategori="jaringan" onclick="showDetail('Server Data', 'Komputer pusat berkemampuan tinggi yang aktif 24/7 untuk melayani permintaan data dari komputer klien di jaringan.', 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400', 'Bentuk: Rack Server, Tower, Blade')">
-            <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400" alt="Server" class="card-img">
-            <h3>Server</h3>
+        <div class="card jaringan" data-kategori="jaringan" onclick="showDetail('Access Point (AP)', 'Memancarkan jaringan WiFi agar perangkat bisa terhubung tanpa kabel.', 'gambar/ap.jpg', 'Merek: Ubiquiti, TP-Link')">
+            <img src="gambar/ap.jpg" alt="Access Point" class="card-img">
+            <h3>Access Point (AP)</h3>
             <p>Klik untuk detail</p>
         </div>
 
-        <div class="card jaringan" data-kategori="jaringan" onclick="showDetail('NIC (LAN Card)', 'Network Interface Card. Papan sirkuit pada PC yang menyediakan port RJ45 agar komputer bisa dicolok kabel LAN.', 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=400', 'Kecepatan: 1 Gbps, 10 Gbps')">
-            <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=400" alt="NIC" class="card-img">
-            <h3>NIC (LAN Card)</h3>
+        <div class="card jaringan" data-kategori="jaringan" onclick="showDetail('LAN Card (NIC)', 'Kartu jaringan yang memungkinkan komputer terhubung ke jaringan.', 'gambar/lan-card.jpg', 'Merek: Intel, Realtek')">
+            <img src="gambar/lan-card.jpg" alt="LAN Card" class="card-img">
+            <h3>LAN Card (NIC)</h3>
             <p>Klik untuk detail</p>
         </div>
 
-        <div class="card jaringan" data-kategori="jaringan" onclick="showDetail('Patch Panel', 'Papan terminal manajemen kabel. Berfungsi agar ratusan kabel UTP di ruang server tertata sangat rapi dan mudah di-troubleshoot.', 'https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?w=400', 'Kapasitas: 24 Port, 48 Port')">
-            <img src="https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?w=400" alt="Patch Panel" class="card-img">
-            <h3>Patch Panel</h3>
+        <div class="card jaringan" data-kategori="jaringan" onclick="showDetail('Kabel LAN', 'Media kabel untuk menghubungkan perangkat jaringan.', 'gambar/kabel-lan.jpg', 'Merek: Belden (Cat5e, Cat6, Cat7)')">
+            <img src="gambar/kabel-lan.jpg" alt="Kabel LAN" class="card-img">
+            <h3>Kabel LAN (Ethernet)</h3>
             <p>Klik untuk detail</p>
         </div>
 
-        <div class="card jaringan" data-kategori="jaringan" onclick="showDetail('Hardware Firewall', 'Benteng keamanan jaringan fisik. Menyaring lalu lintas data masuk dan keluar untuk memblokir serangan peretas (hacker) dan malware.', 'https://images.unsplash.com/photo-1563206767-5b18f218e8de?w=400', 'Merek: Fortinet, Palo Alto, Cisco ASA')">
-            <img src="https://images.unsplash.com/photo-1563206767-5b18f218e8de?w=400" alt="Firewall" class="card-img">
-            <h3>Hardware Firewall</h3>
+        <div class="card jaringan" data-kategori="jaringan" onclick="showDetail('Repeater', 'Memperkuat sinyal WiFi agar jangkauan lebih luas.', 'gambar/repeater.jpg', 'Merek: TP-Link, Netgear')">
+            <img src="gambar/repeater.jpg" alt="Repeater" class="card-img">
+            <h3>Repeater</h3>
             <p>Klik untuk detail</p>
         </div>
 
-        <div class="card jaringan" data-kategori="jaringan" onclick="showDetail('NAS (Penyimpanan Jaringan)', 'Network Attached Storage. Hardisk berkapasitas raksasa yang terhubung langsung ke jaringan agar filenya bisa diakses banyak komputer sekaligus.', 'https://images.unsplash.com/photo-1610662705138-0fcbf03eb158?w=400', 'Merek: Synology, QNAP')">
-            <img src="https://images.unsplash.com/photo-1610662705138-0fcbf03eb158?w=400" alt="NAS" class="card-img">
-            <h3>NAS Storage</h3>
-            <p>Klik untuk detail</p>
-        </div>
-
-        <div class="card jaringan" data-kategori="jaringan" onclick="showDetail('Konektor RJ45', 'Kepala plastik di ujung kabel UTP yang dicolokkan ke port LAN komputer atau switch. Membutuhkan alat tang crimping untuk memasangnya.', 'https://images.unsplash.com/photo-1543085227-fce5957b98d2?w=400', 'Kategori: Cat5e, Cat6 (Urutan: Straight / Crossover)')">
-            <img src="https://images.unsplash.com/photo-1543085227-fce5957b98d2?w=400" alt="RJ45" class="card-img">
-            <h3>Konektor RJ45</h3>
-            <p>Klik untuk detail</p>
-        </div>
-
-        <div class="card jaringan" data-kategori="jaringan" onclick="showDetail('WiFi Extender', 'Perangkat yang bertugas menangkap sinyal WiFi yang mulai melemah dari ruter utama, lalu memancarkannya kembali agar jangkauannya lebih luas.', 'https://images.unsplash.com/photo-1620288627223-53302f4e8c74?w=400', 'Standar: WiFi 5 (802.11ac), WiFi 6 (802.11ax)')">
-            <img src="https://images.unsplash.com/photo-1620288627223-53302f4e8c74?w=400" alt="WiFi Extender" class="card-img">
-            <h3>WiFi Extender</h3>
-            <p>Klik untuk detail</p>
-        </div>
     </main>
 
     <!-- ============================== -->
@@ -171,12 +159,13 @@
 
     <!-- Menghubungkan file JavaScript -->
     <script src="script.js"></script>
+    
     <!-- Tombol Rahasia untuk Scroll ke Atas -->
-    <button id="btnScrollTop" onclick="scrollToTop()">??</button>
+    <button id="btnScrollTop" onclick="scrollToTop()">⬆️</button>
 
     <!-- Kaki Website (Footer) -->
     <footer>
-        <p>� 2026 Ensiklopedia Hardware & Jaringan - Dibuat oleh SISWA !</p>
+        <p>© 2026 Ensiklopedia Hardware & Jaringan - Dibuat oleh SISWA !</p>
     </footer>
 </body>
 </html>
